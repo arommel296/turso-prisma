@@ -9,3 +9,14 @@ const libsql = createClient({
 
 const adapter = new PrismaLibSQL(libsql);
 const prisma = new PrismaClient({ adapter });
+
+export default prisma;
+
+module.exports = new PrismaClient({
+  datasources: {
+    db: {
+      url: 'libsql://pruebaturso-arommel296.turso.io',
+      // secret: 'your-secret-key',
+    },
+  },
+});
